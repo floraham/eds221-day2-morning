@@ -6,9 +6,9 @@ execute:
   warning: false
 ---
 
-# Making & indexing data in R 
+# Making & indexing data in R
 
-### Vectors 
+### Vectors
 
 Making Vectors
 
@@ -72,7 +72,7 @@ trees[3]
 trees[3:5]
 ```
 
-## Warm-up for Loops 
+## Warm-up for Loops
 
 ```{r}
 i <- 4 #indexing helper
@@ -93,6 +93,7 @@ trees[3] <- "OAK"
 ```{r}
 waffle <- list("dog", 21.5, "brown", 2L)
 ```
+
 ```{r}
 
 fish_size <- matrix(c(0.8, 1.2,0.4,0.9), ncol=2, nrow=2, byrow=FALSE)
@@ -107,5 +108,8 @@ fish_size[,2]
 #change333
 ```
 
+An edit!
 
+# Lists 
 
+#1-D data structure of the same class
