@@ -2,6 +2,89 @@
 title: "Day 2 interactive Lessons"
 format: html
 editor: visual
+execute:
+  warning: false
 ---
 
-## 
+# Making & indexing data in R 
+
+### Vectors 
+
+Making Vectors
+
+```{r}
+goodbois <- c("teddy", "tango", "heidi", "coco", "baidi", "fudo")
+
+#check class of goodbois
+typeof(goodbois)
+class(goodbois)
+
+```
+
+```{r}
+my_breakfast <- c("coffee", 2, TRUE, "raisinbran")
+typeof(my_breakfast)
+class(my_breakfast)
+
+```
+
+```{r}
+weights <- c(50L, 60L, 25L, 35L, 55L)
+typeof(weights)
+class(weights)
+```
+
+```{r}
+is.numeric(weights)
+```
+
+```{r}
+zipcodes <- c(93105, 93514, 93101, 93401)
+
+class(zipcodes)
+
+
+# Use as. family of functions to recast data classes
+# Use is. family of functions to ASK what class something is
+zipcodes_chr <- as.character(zipcodes)
+
+
+```
+
+```{r}
+dog_food <- c(teddy = "purina", khora= "alpo", waffle="fancy feast", banjo = "blue diamond", tallie = "farmer's dog")
+class(dog_food)
+test <- c(cat = 4, dog = 10, elephant = 11)
+class(test)
+
+
+dog_food[1]
+#R USES A 1-INDEX. PYTHON & JAVASCRIPT USES A 0-INDEX#
+```
+
+access ranges of values in a vector
+
+Use: to refer to a range (low : high)
+
+```{r}
+trees <- c("ponderosa", "lodgepole", "jeffrey", "sugar", "white", "bristle cone")
+trees[3]
+trees[3:5]
+```
+
+## Warm-up for Loops 
+
+```{r}
+i <- 4 #indexing helper
+trees[4]
+
+```
+
+```{r}
+i <- seq(1:4) #same thing as seq(from=1, to=3)
+trees[i] #gives every item in trees
+```
+
+```{r}
+trees[3] <- "OAK"
+```
