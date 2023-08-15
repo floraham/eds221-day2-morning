@@ -6,6 +6,11 @@ execute:
   warning: false
 ---
 
+```{r}
+library(tidyverse)
+library(dplyr)
+```
+
 # Making & indexing data in R
 
 ### Vectors
@@ -133,3 +138,21 @@ class(ttest_example)
 ```
 
 the p.value of this t-test is `` `r ttest_example$p.value` ``
+
+## Data frames 
+
+```{r}
+fruit <- data.frame(type = c("apple","banana","peach"), mass = c(130,195,150))
+class(fruit)
+fruit[3,2]
+
+purrr::pluck(fruit,"type", 2 ) ## a way to index data structures. potentially more linear than traditional methods 
+
+starwars$starships[[1]][2]
+purrr::pluck(starwars, "starships", 1, 2)
+```
+
+```{r}
+class(starwars$starships[1])
+class(starwars$starships[[1]])
+```
