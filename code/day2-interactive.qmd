@@ -6,9 +6,14 @@ execute:
   warning: false
 ---
 
-# Making & indexing data in R 
+```{r}
+library(tidyverse)
+library(dplyr)
+```
 
-### Vectors 
+# Making & indexing data in R
+
+### Vectors
 
 Making Vectors
 
@@ -72,7 +77,7 @@ trees[3]
 trees[3:5]
 ```
 
-## Warm-up for Loops 
+## Warm-up for Loops
 
 ```{r}
 i <- 4 #indexing helper
@@ -93,6 +98,7 @@ trees[3] <- "OAK"
 ```{r}
 waffle <- list("dog", 21.5, "brown", 2L)
 ```
+
 ```{r}
 
 fish_size <- matrix(c(0.8, 1.2,0.4,0.9), ncol=2, nrow=2, byrow=FALSE)
@@ -104,8 +110,49 @@ str(fish_size)
 typeof(fish_size) #tells you within the data structure the data type for the different values 
 fish_size[2,2]
 fish_size[,2]
-
+#change333
 ```
 
+An edit!
 
+# Lists 
 
+#1-D data structure of the same class
+
+```{r}
+urchins <- list("blue", c(1, 2, 3), c("lunch, dinner, dessert"), 5L)
+```
+
+if you're indexing into a data structure, \[\] returns element, but retains data structure
+
+```{r}
+urchins_list <- urchins[2] #this returns a list
+urchins_vector <- urchins[[2]]#this returns a vector
+sample1 <- c(1,2,3,4,5,6,7,8)
+sample2 <- c(3,4,1,5,6,7,8,9)
+
+ttest_example <- t.test(sample1, sample2)
+ttest_example
+
+class(ttest_example)
+```
+
+the p.value of this t-test is `` `r ttest_example$p.value` ``
+
+## Data frames 
+
+```{r}
+fruit <- data.frame(type = c("apple","banana","peach"), mass = c(130,195,150))
+class(fruit)
+fruit[3,2]
+
+purrr::pluck(fruit,"type", 2 ) ## a way to index data structures. potentially more linear than traditional methods 
+
+starwars$starships[[1]][2]
+purrr::pluck(starwars, "starships", 1, 2)
+```
+
+```{r}
+class(starwars$starships[1])
+class(starwars$starships[[1]])
+```
