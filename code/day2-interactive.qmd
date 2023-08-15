@@ -81,10 +81,17 @@ trees[4]
 ```
 
 ```{r}
-i <- seq(1:4) #same thing as seq(from=1, to=3)
+count_trees <- length(trees)
+i <- seq(1:count_trees) #same thing as seq(from=1, to=3)
 trees[i] #gives every item in trees
 ```
 
 ```{r}
 trees[3] <- "OAK"
 ```
+
+```{r}
+waffle <- list("dog", 21.5, "brown", 2L)
+```
+
+
